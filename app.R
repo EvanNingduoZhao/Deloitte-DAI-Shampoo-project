@@ -437,20 +437,21 @@ server <- shinyServer(function(input, output, session){
   output$CommentBrand <- renderUI({
     ui <- list(
       ref = fluidRow(
-        box(id = 'step3_2',
-            status = 'primary',
-            title = '各品牌用户满意度与月营收相关性',
-            width = 8,
-            img(src='rate_share.png', align = "right",width = 600,
-                height = 400)
-        ),
-        box(
+      	box(
           id='shihuakou_cloud',
           status = 'primary',
           title = 'Top20品牌评论标签',
           width = 4,
           wordcloud2Output('shihuakou',height = '400px')
+        ),
+        box(id = 'step3_2',
+            status = 'primary',
+            title = '各品牌用户满意度与月营收相关性',
+            width = 8,
+            img(src='rate_share.png', align = "right",width = 800,
+                height = 700)
         )
+        
       )
     )
     
